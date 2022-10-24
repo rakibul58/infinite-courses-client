@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import logo from '../../assests/images/favicon-32x32.png';
+import { FaToggleOn , FaToggleOff} from 'react-icons/fa';
+
 
 const Header = () => {
+    const [dark, setDark] = useState(false);
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
@@ -27,8 +30,23 @@ const Header = () => {
                         <Nav.Link href="#pricing">Blog</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Button className='fw-semibold me-2' variant='primary'>Login</Button>
-                        <Button className='fw-semibold' variant='outline-primary'>Register</Button>
+                        <div onClick={()=>setDark(!dark)} className='fw-semibold fs-4 me-3'>
+                            {dark ?
+
+                                <>
+                                    Dark {' '}
+                                    <FaToggleOn/>
+                                </>
+                                :
+                                <>
+                                    Light {' '}
+                                    <FaToggleOff/>
+                                </>
+
+                            }
+                        </div>
+                        <Button className='fw-semibold mx-2 my-1' variant='primary'>Login</Button>
+                        <Button className='fw-semibold my-1' variant='outline-primary'>Register</Button>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
