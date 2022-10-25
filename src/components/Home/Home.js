@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image'
 import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
 
 const Home = () => {
     
@@ -17,7 +18,7 @@ const Home = () => {
                 <Col lg={5} className='my-auto'>
                     <h1 className='ms-0 ms-lg-5 mt-3 mt-lg-0 fw-bold'>Welcome to <span className='text-primary font-monospace'>Infinite Knowledge</span>!!!</h1>
                     <p className='ms-0 ms-lg-5 my-5 text-secondary fw-semibold fs-5'>Join our courses today. This is place to enrich your Knowledge and increase your horizon.You can learn everything from the comfort of your home.</p>
-                    <Link className='ms-0 ms-lg-5 text-secondary fw-semibold fs-5' to='/courses'><Button>Visit Courses</Button></Link>
+                    <Link className='ms-0 ms-lg-5' to='/courses'><Button className='fw-semibold fs-5'>Visit Courses <FaArrowRight/> </Button></Link>
                 </Col>
             </Row>
         </Container>
