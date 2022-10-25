@@ -5,12 +5,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import logo from '../../assests/images/favicon-32x32.png';
 import { FaToggleOn , FaToggleOff} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 
 
 const Header = () => {
     const [dark, setDark] = useState(false);
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar collapseOnSelect expand="lg" bg={dark?'dark':'light'} variant={dark?'dark':'light'}>
             <Container>
                 <Navbar.Brand href="#home" className='navbar-title text-primary fw-semibold fs-2'>
                     <img
@@ -30,7 +32,7 @@ const Header = () => {
                         <Nav.Link href="#pricing">Blog</Nav.Link>
                     </Nav>
                     <Nav>
-                        <div onClick={()=>setDark(!dark)} className='fw-semibold fs-4 me-3'>
+                        <div onClick={()=>setDark(!dark)} className={`fw-semibold fs-4 me-3 ${dark?'text-light':'text-dark'}`}>
                             {dark ?
 
                                 <>
@@ -45,6 +47,7 @@ const Header = () => {
 
                             }
                         </div>
+                        
                         <Button className='fw-semibold mx-2 my-1' variant='primary'>Login</Button>
                         <Button className='fw-semibold my-1' variant='outline-primary'>Register</Button>
                     </Nav>
