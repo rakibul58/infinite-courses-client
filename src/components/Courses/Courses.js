@@ -26,7 +26,7 @@ const Courses = () => {
                 <Col lg="3" className='bg-gray bg-opacity-10 h-100 p-5 sticky-lg-top'>
                     <h4 className='mb-3 fw-semibold'>Visit Courses</h4>
                     <ListGroup>
-                        {courses.map(course=><ListGroupItem><Link className='fw-semibold text-decoration-none text-secondary'>{course.title}</Link></ListGroupItem>)}
+                        {courses.map(course=><ListGroupItem key={course.id}><Link to={`/course/${course.id}`} className='fw-semibold text-decoration-none text-secondary'>{course.title}</Link></ListGroupItem>)}
                     </ListGroup>
                 </Col>
             </Row>
