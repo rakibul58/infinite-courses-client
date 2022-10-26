@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link} from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 const Register = () => {
-
+    const [error , setError] = useState('');
     const {createUser} = useContext(AuthContext);
 
 
@@ -23,8 +23,12 @@ const Register = () => {
             const user = result.user;
             console.log(user);
             form.reset();
+            setError('');
         })
-        .catch(error=>console.error(error));
+        .catch(error=>{
+            console.error(error);
+            setError(error.message)
+        });
     }
 
     return (
@@ -53,7 +57,7 @@ const Register = () => {
                 <Button className='rounded-3 w-100 fw-semibold' variant="primary" type="submit">
                     Register
                 </Button>
-
+                <p className='text-center text-danger'><small>{error}</small></p>
                 <p className="text-dark mt-4 text-center">
                     Already Have an Account? Please <Link to='/login'>Login</Link>
                 </p>

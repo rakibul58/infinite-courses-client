@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button, Image } from 'react-bootstrap';
 import { FaDollarSign, FaDownload } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import ReactToPdf from 'react-to-pdf'
 const ref = React.createRef();
 const CourseDetail = () => {
     const course = useLoaderData();
-    const { image, title, description, author, rating, price } = course;
+    const {id, image, title, description, author, rating, price } = course;
     console.log(course)
     return (
         <div className='App mt-3'>
@@ -36,7 +36,7 @@ const CourseDetail = () => {
                     </div>
                 </div>
             </div>
-            <Button variant='warning' className='mt-5 text-start fw-semibold'><FaDollarSign/> Purchase Course</Button>
+            <Link to={`/cashout/${id}`}><Button variant='warning' className='mt-5 text-start fw-semibold'><FaDollarSign/> Purchase Course</Button></Link>
         </div>
     );
 };

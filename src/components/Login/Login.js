@@ -3,12 +3,16 @@ import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const [error , setError] = useState('');
     const {googleProviderLogin , signIn} = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
     const handleSubmit = event =>{
         event.preventDefault();
@@ -23,9 +27,13 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             form.reset();
-            navigate('/');
+            setError('');
+            navigate(from , {replace: true});
         })
-        .catch(error=>console.error(error))
+        .catch(error=>{
+            console.error(error);
+            setError(error.message)
+        })
     }
     
 
@@ -35,9 +43,13 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
-            navigate('/');
+            setError('');
+            navigate(from , {replace: true});
         })
-        .catch(error=>console.error(error));
+        .catch(error=>{
+            console.error(error);
+            setError(error.message)
+        });
     }
     return (
         <div style={{maxWidth:'400px'}} className='container mt-5 border border-3 p-4 rounded-5 border-primary'>
@@ -55,7 +67,7 @@ const Login = () => {
                 <Button className='rounded-3 w-100 fw-semibold' variant="primary" type="submit">
                     Login
                 </Button>
-                <p className='text-danger text-center'></p>
+                <p className='text-danger text-center'><small>{error}</small></p>
                 <p className="text-dark mt-4 text-center">
                     Don't Have an Account? Please <Link to='/register'>Register</Link>
                 </p>
