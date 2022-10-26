@@ -10,7 +10,7 @@ const CourseDetail = () => {
     console.log(course)
     return (
         <div className='App mt-3'>
-            <h1 className='d-inline me-3'>Download here</h1>
+            <h1 className='d-inline me-3'>Download Here</h1>
             <ReactToPdf targetRef={ref} filename={`${title}.pdf`}>
                 {({ toPdf }) => (
                     <Button variant='outline-dark' className='ms-auto' onClick={toPdf}><FaDownload /></Button>
