@@ -14,12 +14,12 @@ import Tooltip from 'react-bootstrap/Tooltip';
 
 const Header = () => {
     const [dark, setDark] = useState(false);
-    const { user , logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     console.log(user);
-    const handleLogOut = () =>{
+    const handleLogOut = () => {
         logOut()
-        .then(()=>{})
-        .catch(error=>console.error(error));
+            .then(() => { })
+            .catch(error => console.error(error));
     }
     return (
         <Navbar collapseOnSelect expand="lg" bg={dark ? 'dark' : 'light'} variant={dark ? 'dark' : 'light'}>
@@ -74,8 +74,8 @@ const Header = () => {
                                                     </Tooltip>
                                                 }
                                             >
-                                            <Image roundedCircle style={{ height: "30px" ,  width: '30px' }} className='mx-2 my-auto' src={user?.photoURL} />
-                                                
+                                                <Image roundedCircle style={{ height: "30px", width: '30px' }} className='mx-2 my-auto' src={user?.photoURL} />
+
                                             </OverlayTrigger>
                                         </>
                                         :
