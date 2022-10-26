@@ -1,5 +1,5 @@
 import { GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
@@ -8,6 +8,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
     const {googleProviderLogin} = useContext(AuthContext);
+    const [errorMessage , setErrorMessage] = useState(null);
 
     const googleProvider = new GoogleAuthProvider();
     const handleGoogleSignIn = () =>{
@@ -16,7 +17,7 @@ const Login = () => {
             const user = result.user;
             console.log(user);
         })
-        .catch(error=>console.error(error));
+        .catch(error=>setErrorMessage(error));
     }
     return (
         <div style={{maxWidth:'400px'}} className='container mt-5 border border-3 p-4 rounded-5 border-primary'>
@@ -34,6 +35,7 @@ const Login = () => {
                 <Button className='rounded-3 w-100 fw-semibold' variant="primary" type="submit">
                     Login
                 </Button>
+                <p className='text-danger text-center'>{errorMessage? errorMessage : ''}</p>
                 <p className="text-dark mt-4 text-center">
                     Don't Have an Account? Please <Link to='/register'>Register</Link>
                 </p>
