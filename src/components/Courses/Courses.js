@@ -1,7 +1,8 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, ListGroup, ListGroupItem, Row } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import CourseCard from '../CourseCard/CourseCard';
+
 
 const Courses = () => {
     const courses = useLoaderData();
@@ -22,11 +23,11 @@ const Courses = () => {
                     </Row>
 
                 </Col>
-                <Col lg="3" className='bg-primary bg-opacity-10 h-100 p-5'>
-                    <h2 className='mb-3 text-center font-monospace text-primary fw-bold'>Visit Our Courses</h2>
-                    <Row lg={1} className="gy-4">
-                        {courses.map(course=><Link className='btn btn-primary fw-semibold'>{course.title}</Link>)}
-                    </Row>
+                <Col lg="3" className='bg-gray bg-opacity-10 h-100 p-5 sticky-lg-top'>
+                    <h4 className='mb-3 fw-semibold'>Visit Courses</h4>
+                    <ListGroup>
+                        {courses.map(course=><ListGroupItem><Link className='fw-semibold text-decoration-none text-secondary'>{course.title}</Link></ListGroupItem>)}
+                    </ListGroup>
                 </Col>
             </Row>
 

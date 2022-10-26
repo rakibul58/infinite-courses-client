@@ -10,8 +10,8 @@ const CourseCard = ({ course }) => {
             <Card className='h-100'>
                 <Card.Img className='img-fluid' variant="top" src={image} />
                 <Card.Body>
-                    <Card.Title>{title}</Card.Title>
-                    <Card.Text>
+                    <Card.Title className='text-primary'>{title}</Card.Title>
+                    <Card.Text className='text-secondary'>
                         {description.length>20 ? description.slice(0,70)+'...' : description}
                     </Card.Text>
                 </Card.Body>
