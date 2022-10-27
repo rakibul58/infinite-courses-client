@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBPLQ45ZSFh5jMuNhAu4_jwlnQ87bDkRA4",
-  authDomain: "infinit-courses.firebaseapp.com",
-  projectId: "infinit-courses",
-  storageBucket: "infinit-courses.appspot.com",
-  messagingSenderId: "920346257648",
-  appId: "1:920346257648:web:3cda405de9d44bf675fa35"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
