@@ -8,7 +8,9 @@ const Courses = () => {
     const courses = useLoaderData();
     // console.log(courses);
     return (
+    
         <Container fluid className='mb-5'>
+            {/* Cards */}
             <Row className='gy-5'>
                 <Col lg="9" className='px-5'>
                     <h1 className='mt-5 text-primary text-opacity-75'>Our Courses</h1>
@@ -23,6 +25,7 @@ const Courses = () => {
                     </Row>
 
                 </Col>
+                {/* Sidebar */}
                 <Col lg="3" className='bg-gray bg-opacity-10 h-100 p-5 sticky-lg-top'>
                     <h4 className='mb-3 fw-semibold'>Visit Courses</h4>
                     <ListGroup>

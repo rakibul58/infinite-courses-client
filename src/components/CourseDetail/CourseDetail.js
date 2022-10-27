@@ -11,6 +11,7 @@ const CourseDetail = () => {
     return (
         <Container className='App mt-3'>
             <h1 className='text-center d-inline me-3'>Download Here</h1>
+            {/* for pdf download */}
             <ReactToPdf targetRef={ref} filename={`${title}.pdf`}>
                 {({ toPdf }) => (
                     <Button variant='outline-dark' className='ms-auto' onClick={toPdf}><FaDownload /></Button>

@@ -5,6 +5,7 @@ const FAQ = () => {
     return (
         <div className='mt-4 container'>
             <h1 className='mb-4 text-primary text-center'>Frequently Asked Questions</h1>
+            {/* Accordian */}
             <Accordion>
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>How Can I Login?</Accordion.Header>

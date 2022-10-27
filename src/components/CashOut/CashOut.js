@@ -12,6 +12,7 @@ const CashOut = () => {
     const month = newDate.getMonth() + 1;
     const year = newDate.getFullYear();
     return (
+        //cashout page
         <div className='mt-5 container'>
             <div className='d-flex flex-wrap justify-content-lg-between px-5 gap-3'>
                 <h4 className='text-success fw-bold'>Thanks For Purchasing</h4>

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const CourseCard = ({ course }) => {
     const { image, title , description , id} = course;
+    // Cards for cardDetail
     return (
         <Col>
             <Card className='h-100'>

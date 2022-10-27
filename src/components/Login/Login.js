@@ -12,8 +12,10 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    //getting location from private route
     const from = location.state?.from?.pathname || "/";
 
+    //login with email and password
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -37,6 +39,7 @@ const Login = () => {
     }
 
 
+    //login with google
     const googleProvider = new GoogleAuthProvider();
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
@@ -53,6 +56,7 @@ const Login = () => {
     }
 
 
+    //login with github
     const githubProvider = new GithubAuthProvider();
     const handleGithubSignIn = () => {
         providerLogin(githubProvider)

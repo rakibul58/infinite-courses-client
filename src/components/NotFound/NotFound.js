@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 const NotFound = () => {
+    //404 Route
     return (
         <div style={{height: '700px'}} className='text-center d-flex justify-content-center align-items-center'>
             <div>

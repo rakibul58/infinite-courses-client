@@ -4,10 +4,12 @@ import Form from 'react-bootstrap/Form';
 import { Link} from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 const Register = () => {
+    // Registration form
     const [error , setError] = useState('');
     const {createUser , updateUserProfile} = useContext(AuthContext);
 
 
+    //will register if registration button clicked
     const handleSubmit = event =>{
         event.preventDefault();
         const form = event.target;
