@@ -8,7 +8,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
     const [error , setError] = useState('');
-    const {googleProviderLogin , signIn} = useContext(AuthContext);
+    const {providerLogin , signIn} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -39,7 +39,7 @@ const Login = () => {
 
     const googleProvider = new GoogleAuthProvider();
     const handleGoogleSignIn = () =>{
-        googleProviderLogin(googleProvider)
+        providerLogin(googleProvider)
         .then(result => {
             const user = result.user;
             console.log(user);

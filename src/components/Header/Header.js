@@ -79,7 +79,7 @@ const Header = () => {
                                             </OverlayTrigger>
                                         </>
                                         :
-                                        <FaUserAlt className='mx-2 my-auto' />
+                                        <FaUserAlt title={user?.email} className='mx-2 my-auto' />
                                     }
                                     <Button className='fw-semibold me-2 my-1' variant='primary' onClick={handleLogOut}>Logout</Button>
                                 </>

@@ -23,17 +23,17 @@ export const routes = createBrowserRouter([
             {
                 path:'/courses',
                 element:<Courses/>,
-                loader: ()=>fetch('http://localhost:5000/courses')
+                loader: ()=>fetch('https://infinite-courses-server.vercel.app/courses')
             },
             {
                 path:'/course/:id',
                 element:<CourseDetail/>,
-                loader: ({params})=>fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({params})=>fetch(`https://infinite-courses-server.vercel.app/course/${params.id}`)
             },
             {
                 path: '/cashout/:id',
                 element:<PrivateRoute><CashOut/></PrivateRoute>,
-                loader: ({params})=>fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({params})=>fetch(`https://infinite-courses-server.vercel.app/course/${params.id}`)
             },
             {
                 path: '/faq',
