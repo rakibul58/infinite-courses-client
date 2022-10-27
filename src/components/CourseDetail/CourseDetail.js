@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Image } from 'react-bootstrap';
+import { Button, Container, Image } from 'react-bootstrap';
 import { FaDollarSign, FaDownload } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import ReactToPdf from 'react-to-pdf'
@@ -9,8 +9,8 @@ const CourseDetail = () => {
     const {id, image, title, description, author, rating, price } = course;
     console.log(course)
     return (
-        <div className='App mt-3'>
-            <h1 className='d-inline me-3'>Download Here</h1>
+        <Container className='App mt-3'>
+            <h1 className='text-center d-inline me-3'>Download Here</h1>
             <ReactToPdf targetRef={ref} filename={`${title}.pdf`}>
                 {({ toPdf }) => (
                     <Button variant='outline-dark' className='ms-auto' onClick={toPdf}><FaDownload /></Button>
@@ -37,7 +37,7 @@ const CourseDetail = () => {
                 </div>
             </div>
             <Link to={`/cashout/${id}`}><Button variant='warning' className='mt-5 text-start fw-semibold'><FaDollarSign/> Purchase Course</Button></Link>
-        </div>
+        </Container>
     );
 };
 
