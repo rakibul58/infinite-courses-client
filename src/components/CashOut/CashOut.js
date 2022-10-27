@@ -17,7 +17,7 @@ const CashOut = () => {
                 <h4 className='text-success fw-bold'>Thanks For Purchasing</h4>
                 <div className='bg-success bg-opacity-75 py-2 px-5 rounded-3 text-light fw-semibold fs-4'>Paid</div>
             </div>
-            <div className='d-flex flex-wrap justify-content-center justify-content-lg-between px-5 mt-3 fw-semibold text-secondary text-lg-end text-center align-items-center'>
+            <div className='d-flex flex-wrap justify-content-center justify-content-lg-between px-5 mt-3 fw-semibold text-secondary text-lg-end text-center align-items-center gap-3'>
                 <div>
                     <Image style={{height:'100px'}} fluid src={image}></Image>
                 </div>
