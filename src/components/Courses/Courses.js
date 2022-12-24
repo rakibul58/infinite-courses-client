@@ -13,8 +13,8 @@ const Courses = () => {
             {/* Cards */}
             <Row className='gy-5'>
                 <Col lg="9" className='px-5'>
-                    <h1 className='mt-5 text-primary text-opacity-75'>Our Courses</h1>
-
+                    <h4 className='mt-5 text-primary fw-bold text-opacity-75 text-center'>Our Courses</h4>
+                    <h1 className='text-secondary text-center'>These are our main courses</h1>
                     <Row xs={1} md={2} lg={3} className="g-4 mt-3">
                         {
                             courses.map(course => <CourseCard

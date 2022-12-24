@@ -18,6 +18,7 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path:'/',
+                loader: ()=>fetch('https://infinite-courses-server.vercel.app/courses'),
                 element: <Home/>
             },
             {

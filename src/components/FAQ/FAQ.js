@@ -3,8 +3,9 @@ import { Accordion } from 'react-bootstrap';
 
 const FAQ = () => {
     return (
-        <div className='mt-4 container'>
-            <h1 className='mb-4 text-primary text-center'>Frequently Asked Questions</h1>
+        <div style={{marginTop: '100px'}} className='container'>
+            <h5 className='text-primary text-center fw-bold'>Frequently Asked Questions</h5>
+            <h1 className='text-center text-secondary mb-5'>These are some of the Frequently Asked Question</h1>
             {/* Accordian */}
             <Accordion>
                 <Accordion.Item eventKey="0">
