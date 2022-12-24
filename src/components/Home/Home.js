@@ -9,6 +9,12 @@ import { FaArrowRight } from 'react-icons/fa';
 import FAQ from '../FAQ/FAQ';
 import Courses from '../Courses/Courses';
 import Blogs from './Blogs';
+import UpcomingCourses from './UpcomingCourses/UpcomingCourses';
+import Contact from './Contact/Contact';
+import Team from './Team/Team';
+import Pricing from './Pricing/Pricing';
+import CustomerReviews from '../CustomerReviews/CustomerReviews';
+import Subscribe from './Subscribe/Subscribe';
 
 const Home = () => {
 
@@ -26,13 +32,33 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
-            <div style={{margin: "200px 0"}}>
+            <div style={{ margin: "200px 0" }}>
                 <Courses></Courses>
             </div>
-            <div>
+            <div style={{ margin: "200px 0" }}>
+                <UpcomingCourses></UpcomingCourses>
+            </div>
+            <div style={{ margin: "200px 0" }}>
+                <Team></Team>
+            </div>
+            <div style={{ margin: "200px 0" }}>
+                <Pricing></Pricing>
+            </div>
+            <div style={{ margin: "200px 0" }}>
+                <CustomerReviews></CustomerReviews>
+            </div>
+            <div style={{ margin: "200px 0" }}>
                 <Blogs></Blogs>
             </div>
-            <FAQ></FAQ>
+            <div style={{ margin: "200px 0" }}>
+                <FAQ></FAQ>
+            </div>
+            <div style={{ margin: "200px 0" }}>
+                <Contact></Contact>
+            </div>
+            <div style={{ margin: "200px 0" }}>
+                <Subscribe></Subscribe>
+            </div>
         </div>
     );
 };
