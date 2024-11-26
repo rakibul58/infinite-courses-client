@@ -1,5 +1,7 @@
 # Infinite Courses
 
+[Live Site](https://infinit-courses.web.app/)
+
 ## Overview
 Infinite Courses is a React-based web application for browsing and exploring various courses.
 
